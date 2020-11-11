@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @property mixed subscribed_to_company_news
+ * @property mixed subscribed_to_company_product
+ *
+ * Class User
+ * @package App\Models
+ */
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -20,6 +26,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'subscribed_to_company_news',
+        'subscribed_to_company_product',
     ];
 
     /**
